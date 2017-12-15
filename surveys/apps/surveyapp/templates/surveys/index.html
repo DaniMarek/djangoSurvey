@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Time!</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/surveys/styles.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid bg-2 text-center">
+		<form action="/results" method="post">
+			<div class='form-group'>
+				{% csrf_token %}
+				<label for="name">Name:</label>
+				<input type="text" name="name">
+			</div>
+
+			<div class='form-group'>
+				<label for="location">Location</label>
+				<select name="location">
+					<option value="dallas">Dallas</option>
+					<option value="sanfrisco">San Francisco</option>
+					<option value="ny">New York</option>
+					<option value="seattle">Seattle</option>
+				</select>
+			</div>
+
+			<label for="language">Favorite Language:</label>
+			<select name="language">
+				<option value="python">Python</option>
+				<option value="javascript">JavaScript</option>
+				<option value="ruby">Ruby</option>
+				<option value="c#">C#</option>
+			</select>
+			<label>Comment:</label>
+			<textarea name="comment"></textarea>
+			<button type="submit" name="submit">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

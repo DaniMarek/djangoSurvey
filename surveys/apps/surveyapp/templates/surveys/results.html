@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success!</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/surveys/styles.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid bg-1 text-center">
+		<h3>Thank you for letting us know how we're doing!</h3>
+		<form action="/home" method="post">
+			{% csrf_token %}
+			<h3>Feedback Submitted</h3>
+
+			<h2>Name: {{request.session.name}}</h2>
+			<h2>Location: {{request.session.location}}</h2>
+			<h2>Language: {{request.session.language}}</h2>
+			<h2>Comment: {{request.session.comment}}</h2>
+		
+			<!-- terenary conditional shown above -->
+			<button type="submit" name="back">Go Back</button>
+		</form>
+	</div>
+</body>
+</html>
