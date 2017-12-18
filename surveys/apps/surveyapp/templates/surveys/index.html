@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container-fluid bg-2 text-center">
-		<form action="/results" method="post">
+		<form action="/process" method="post">
 			<div class='form-group'>
 				{% csrf_token %}
 				<label for="name">Name:</label>
@@ -21,19 +21,19 @@
 			<div class='form-group'>
 				<label for="location">Location</label>
 				<select name="location">
-					<option value="dallas">Dallas</option>
-					<option value="sanfrisco">San Francisco</option>
-					<option value="ny">New York</option>
-					<option value="seattle">Seattle</option>
+					<option value="Dallas">Dallas</option>
+					<option value="San Francisco">San Francisco</option>
+					<option value="New York">New York</option>
+					<option value="Seattle">Seattle</option>
 				</select>
 			</div>
 
 			<label for="language">Favorite Language:</label>
 			<select name="language">
-				<option value="python">Python</option>
-				<option value="javascript">JavaScript</option>
-				<option value="ruby">Ruby</option>
-				<option value="c#">C#</option>
+				<option value="Python">Python</option>
+				<option value="JavaScript">JavaScript</option>
+				<option value="Ruby">Ruby</option>
+				<option value="C#">C#</option>
 			</select>
 			<label>Comment:</label>
 			<textarea name="comment"></textarea>

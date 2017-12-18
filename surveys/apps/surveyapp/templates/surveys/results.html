@@ -14,14 +14,15 @@
 		<h3>Thank you for letting us know how we're doing!</h3>
 		<form action="/home" method="post">
 			{% csrf_token %}
-			<h3>Feedback Submitted</h3>
+			<h3>Feedback Submitted {{request.session.tries}}</h3>
 
 			<h2>Name: {{request.session.name}}</h2>
 			<h2>Location: {{request.session.location}}</h2>
 			<h2>Language: {{request.session.language}}</h2>
 			<h2>Comment: {{request.session.comment}}</h2>
-		
+	
 			<!-- terenary conditional shown above -->
+		
 			<button type="submit" name="back">Go Back</button>
 		</form>
 	</div>
